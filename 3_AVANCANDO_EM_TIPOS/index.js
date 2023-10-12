@@ -31,4 +31,28 @@ function greeting(name) {
     return `ola ${name}`;
 }
 console.log(greeting('Eduardo'));
-//console.log(greeting(1));
+//console.log(greeting(1));  error
+// 6 - funcoes anonimas
+setTimeout(function () {
+    const sallary = 1000;
+    //console.log(parseFloat(sallary));    error , 'e metodo para string
+    console.log((sallary));
+}, 2000);
+// 7 - tipos de objeto
+function passCoordinates(coord) {
+    console.log("X coordinates: " + coord.x);
+    console.log("X coordinates: " + coord.y);
+}
+const objCoord = { x: 329, y: 84.2 };
+passCoordinates(objCoord);
+passCoordinates({ x: 2, y: 3 });
+// 8 - props opcionais
+function showNumbers(a, b, c) {
+    console.log("A: " + a);
+    console.log("B: " + b);
+    if (c) {
+        console.log("C: " + c);
+    }
+}
+showNumbers(1, 2, 3);
+showNumbers(1, 2); // tem que colocar a ? na hora de declarar o tipo na funcao, se a props for opcional

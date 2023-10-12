@@ -13,6 +13,7 @@ console.log(nomes);
     // nomes.push(4)  error
 
 
+
 // 2 - outra mais antiga sintax array
 const nums: Array<number> = [100, 200]
 console.log(nums);
@@ -20,6 +21,8 @@ console.log(nums);
 nums.push(300)
 console.log(nums);
 console.log(nums[0]);
+
+
 
 
 // 3 - any
@@ -30,14 +33,18 @@ arr1.push([1, 2, 3])
 console.log(arr1);
 
 
-// 4 - parametros tipados
 
+
+
+// 4 - parametros tipados
 function soma(a: number, b: number) {
     console.log(a + b);    
 }
 
 soma(1, 2)
     // soma('a', 'b')  error
+
+
 
 
 // 5 - retorno da funcao
@@ -47,5 +54,50 @@ function greeting(name: string): string {
 }
 
 console.log(greeting('Eduardo'));
-//console.log(greeting(1));
+    //console.log(greeting(1));  error
 
+
+
+
+
+// 6 - funcoes anonimas
+setTimeout(function() {
+    
+    const sallary: number = 1000
+
+    //console.log(parseFloat(sallary));    error , 'e metodo para string
+    console.log((sallary));
+
+}, 2000);
+
+
+
+
+
+// 7 - tipos de objeto
+function passCoordinates(coord: {x: number, y: number}) {
+    console.log("X coordinates: " + coord.x);
+    console.log("X coordinates: " + coord.y);
+    
+}
+
+const objCoord  = {x: 329, y: 84.2}
+
+passCoordinates(objCoord)
+passCoordinates({x: 2, y: 3})
+
+
+
+
+
+// 8 - props opcionais
+function showNumbers(a: number, b: number, c?: number) {
+    console.log("A: " + a);
+    console.log("B: " + b);
+    if(c){
+        console.log("C: " + c);   
+    }
+}
+
+showNumbers(1, 2, 3)
+showNumbers(1, 2)  // tem que colocar a ? na hora de declarar o tipo na funcao, se a props for opcional
