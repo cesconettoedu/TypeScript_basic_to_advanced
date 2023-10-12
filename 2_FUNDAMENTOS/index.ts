@@ -45,4 +45,17 @@ let inf = "Teste"
     // ann = 1
     // inf = 1
 
+// tsc -w      no terminal ele fica compilando automatico assim que salvar
+
+console.log("testando");
+
+//exercicio  -mudar variavel numero par string
+
+let nX: number = 1980
+
+let numString = nX.toString()
+
+const printNumber: string = `Vai imprimir o ${numString}`
+
+console.log(printNumber);
 
