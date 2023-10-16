@@ -56,3 +56,12 @@ function showNumbers(a, b, c) {
 }
 showNumbers(1, 2, 3);
 showNumbers(1, 2); // tem que colocar a ? na hora de declarar o tipo na funcao, se a props for opcional
+// 9 - validando argumento opcional
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        return (`ola, ${firstName} ${lastName}, tudo bem?`);
+    }
+    return `Ola, ${firstName}, tudo bem?`;
+}
+console.log(advancedGreeting("Eduardo", "Cesconetto"));
+console.log(advancedGreeting("Eduardo"));
