@@ -116,6 +116,7 @@ n = 1000n;
 console.log(n);
 console.log(typeof n);
 // 18 - symbol
+//criar valor unico
 let symbolA = Symbol("a");
 let symbolB = Symbol("a");
 console.log(symbolA == symbolB);

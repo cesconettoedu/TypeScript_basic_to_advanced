@@ -236,6 +236,7 @@ console.log(showUserRole("Admin"));
 
 
 // 18 - symbol
+    //criar valor unico
     let symbolA:symbol = Symbol("a")
     let symbolB = Symbol("a")
 
