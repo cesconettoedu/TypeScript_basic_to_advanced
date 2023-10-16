@@ -149,82 +149,96 @@ console.log(showUserRole("Admin"));
 
 
 // 12 - Type alias
-    // reduzir a sintax 
-type ID = string | number
+        // reduzir a sintax 
+    type ID = string | number
 
-function showId(id: ID) {
-   console.log(`O ID e: ${id}`);
-}
+    function showId(id: ID) {
+    console.log(`O ID e: ${id}`);
+    }
 
-showId(1)
-showId("200")
+    showId(1)
+    showId("200")
 
 
 
 // 13 - Interface
-interface Point {
-    x: number
-    y: number
-    z: number
-}
+    interface Point {
+        x: number
+        y: number
+        z: number
+    }
 
-function showCoords(obj: Point){
-    console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
-}
+    function showCoords(obj: Point){
+        console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
+    }
 
-const coordObj:Point = {
-    x: 10,
-    y: 15,
-    z: 20
-}
+    const coordObj:Point = {
+        x: 10,
+        y: 15,
+        z: 20
+    }
 
-showCoords(coordObj)
+    showCoords(coordObj)
 
 
 
 // 14 - interface x type alias
       // inteface voce pode adicionar propriedades depois o Type nao pode (type seria uma const e a interface um let exemplo)
 
-interface Person {
-    name: string
-}
+    interface Person {
+        name: string
+    }
 
-interface Person {
-    age: number
-}
+    interface Person {
+        age: number
+    }
 
-const somePerson: Person = {name: "Eduardo", age: 30}
-console.log(somePerson);
+    const somePerson: Person = {name: "Eduardo", age: 30}
+    console.log(somePerson);
 
 
 
 // 15 - Literal  types
-let test: "testando"
+    let test: "testando"
 
-test = "testando"
+    test = "testando"
 
-console.log(test);
+    console.log(test);
 
 
-function showDirection(direction: "left" | "right" | "center") {
-    console.log(`A direcao 'e: ${direction}`);
-}
+    function showDirection(direction: "left" | "right" | "center") {
+        console.log(`A direcao 'e: ${direction}`);
+    }
 
-showDirection("left")
+    showDirection("left")
 
-    //showDirection("top")   so aceita os valores colocados a cima
+        //showDirection("top")   so aceita os valores colocados a cima
 
 
 
 // 16 - non null assertion operators
-const p = document.getElementById("some-p")
+    const p = document.getElementById("some-p")
 
-console.log(p!.innerText);
+    console.log(p!.innerText);
 
 
 
 // 17 - bigint
-let n: bigint
+    let n: bigint
 
-//n = 1    (noa pode pq 'e numero pequeno) 
-n = 
+    //n = 1    (noa pode pq 'e numero pequeno) 
+    n = 1000n
+
+    console.log(n);
+    console.log(typeof n);
+
+
+
+
+// 18 - symbol
+    let symbolA:symbol = Symbol("a")
+    let symbolB = Symbol("a")
+
+    console.log(symbolA == symbolB);
+    console.log(symbolA === symbolB);
+        
