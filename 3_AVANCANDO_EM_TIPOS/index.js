@@ -109,3 +109,7 @@ showDirection("left");
 // 16 - non null assertion operators
 const p = document.getElementById("some-p");
 console.log(p.innerText);
+// 17 - bigint
+let n;
+//n = 1    (noa pode pq 'e numero pequeno) 
+n = ;

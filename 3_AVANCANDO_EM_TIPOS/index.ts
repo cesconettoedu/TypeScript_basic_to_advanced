@@ -223,4 +223,8 @@ console.log(p!.innerText);
 
 
 
+// 17 - bigint
+let n: bigint
 
+//n = 1    (noa pode pq 'e numero pequeno) 
+n = 
