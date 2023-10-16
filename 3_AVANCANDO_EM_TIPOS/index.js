@@ -65,3 +65,47 @@ function advancedGreeting(firstName, lastName) {
 }
 console.log(advancedGreeting("Eduardo", "Cesconetto"));
 console.log(advancedGreeting("Eduardo"));
+// 10 - uniun type
+// definir melhor que usar ANY , pode definir como mais de um tipo 
+function showBalance(balance) {
+    console.log(`O saldo da conta 'e R$${balance}`);
+}
+showBalance(100);
+showBalance("500");
+// 11 - avancando em union types
+function showUserRole(role) {
+    if (typeof role === 'boolean') {
+        return "Usuario nao aprovado";
+    }
+    return `A funcao do usuario 'e: ${role}`;
+}
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+function showId(id) {
+    console.log(`O ID e: ${id}`);
+}
+showId(1);
+showId("200");
+function showCoords(obj) {
+    console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
+}
+const coordObj = {
+    x: 10,
+    y: 15,
+    z: 20
+};
+showCoords(coordObj);
+const somePerson = { name: "Eduardo", age: 30 };
+console.log(somePerson);
+// 15 - Literal  types
+let test;
+test = "testando";
+console.log(test);
+function showDirection(direction) {
+    console.log(`A direcao 'e: ${direction}`);
+}
+showDirection("left");
+//showDirection("top")   so aceita os valores colocados a cima
+// 16 - non null assertion operators
+const p = document.getElementById("some-p");
+console.log(p.innerText);
