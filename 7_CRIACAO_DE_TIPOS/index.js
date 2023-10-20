@@ -25,7 +25,7 @@ console.log(myPen);
 console.log("------------4--------------");
 // 4 - Type parameters
 function getSomeKey(obj, key) {
-    return `A chave ${key} esta presente no objeto e tem o valor de ${obj[key]}`;
+    return `A chave ${[key]} esta presente no objeto e tem o valor de ${obj[key]}`;
 }
 const server = {
     hd: '2TB',
@@ -34,4 +34,37 @@ const server = {
 console.log(getSomeKey(server, 'ram'));
 //console.log(getSomeKey(server, 'teste'));
 console.log("------------5--------------");
-// 5 - keyof Type Operator
+function showCharName(obj, key) {
+    return `${obj[key]}`;
+}
+const myChar = {
+    name: "Eduardo",
+    age: 30,
+    hasDriveLicense: true
+};
+console.log(showCharName(myChar, 'name'));
+console.log(showCharName(myChar, 'age'));
+console.log("------------6--------------");
+// 6 - type of type operator
+const userName = "Eduardo";
+const userName2 = "Joao"; //tipou como string como userName
+const userName4 = "Lucca";
+console.log("------------7--------------");
+const newTruck = {
+    km: 10000,
+    kg: 5000,
+    description: "Caminhao para pouca carga"
+};
+function showKm(km) {
+    console.log(`O veiculo tem a km de: ${km}`);
+}
+showKm(newTruck.km);
+const newCar = {
+    km: 5000,
+    kg: 1000
+};
+showKm(newCar.km);
+console.log("------------8--------------");
+const someVar = 5;
+console.log("------------9--------------");
+const testing = 'some text';
