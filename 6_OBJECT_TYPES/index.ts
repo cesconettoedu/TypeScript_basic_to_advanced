@@ -1,62 +1,155 @@
-// 1 - generics
-    function showData<T>(arg: T): string {
-        return `O dado 'e: ${arg}`
-    }
+// 1 - tipo de objeto para funções
+interface Product {
+  name: string
+  price: number
+  isAvailable: true
+}
 
-    console.log(showData(5));
-    console.log(showData('Teste'));
-    console.log(showData(true));
-    
-    
+function showProductDetails(product: Product) {
+  console.log(
+    `O nome do produto é ${product.name}, seu preço é R$${product.price}`,
+  )
+  if (product.isAvailable) {
+    console.log('Este produto está disponível!')
+  }
+}
 
-console.log("------------2--------------");
-// 2 - constraint em generic
-    function showProductName<T extends {name: string}>(obj: T) {
-        return `O nome do produto e: ${obj.name}`
-    }
+const shirt: Product = {
+  name: 'Camisa',
+  price: 29.99,
+  isAvailable: true,
+}
 
-    const myObj = {name: "Porta", cor: "Branca"}
-    const otherProd = {name: "carro", wheels: 4, engine: 1.0}
-    const thirdObj = {price: 20.9}   //Precisa ter propriedade NAME , a outras nao importa
+showProductDetails(shirt)
 
-    console.log(showProductName(myObj));
-    console.log(showProductName(otherProd));
-    //console.log(showProductName(thirdObj));    Precisa ter propriedade NAME , a outras nao importa
-    
+// 2 - propriedade opcional em interface
+interface User {
+  email: string
+  role?: string
+}
 
+function showUserDetails(user: User) {
+  console.log(`E-mail do usuário: ${user.email}`)
+  if (user.role) {
+    console.log(`Sua função no sistema é de: ${user.role}`)
+  }
+}
 
-    console.log("------------3--------------");
-// 3 - generic com interface      T e U nomeclaturas usadas para generics
-    interface MyObject<T, U, Q> {
-        name: string
-        wheels: T
-        engine: U
-        color: Q
-    }
+const u1 = { email: 'matheus@teste.com', role: 'Admin' }
+const u2 = { email: 'joao@teste.com' }
 
-    type Car = MyObject<number, number, string>
-    type Pen = MyObject<boolean, boolean, string>
+showUserDetails(u1)
+showUserDetails(u2)
 
-    const myCar: Car = {name: "Fusca", wheels: 4, engine: 1.0, color: "Branco"}
-    const myPen: Pen = {name: "Caneta", wheels: false, engine: false, color: "Azul"}
+// 3 - readonly
+interface Car {
+  brand: string
+  readonly wheels: number
+}
 
-    console.log(myCar);
-    console.log(myPen);
-    
-    
+const fusca: Car = {
+  brand: 'Vw',
+  wheels: 4,
+}
 
-console.log("------------4--------------");
-// 4 - Type parameters
-    function getSomeKey<T, K extends keyof T>(obj: T, key: K) {
-        return `A chave ${key} esta presente no objeto e tem o valor de ${obj[key]}`
-    }
+// fusca.wheels = 5
 
-    const server = {
-        hd: '2TB',
-        ram: '32GB'
-    }
+// 4 - index signature
+interface CoordObject {
+  [index: string]: number
+}
 
-    console.log(getSomeKey(server, 'ram'));
-    //console.log(getSomeKey(server, 'teste'));
-    
-    
+let coords: CoordObject = {
+  x: 10,
+}
+
+// coords.y = 'teste'
+coords.y = 15
+
+console.log(coords)
+
+interface OnlyNumberArray {
+  [index: number]: number
+}
+
+const arr1: OnlyNumberArray = [1, 2, 3]
+// const arr2: OnlyNumberArray = ['1', '2', '3']
+
+// 5 - extending types
+interface Human {
+  name: string
+  age: number
+}
+
+interface SuperHuman extends Human {
+  superpowers: string[]
+}
+
+const goku: SuperHuman = {
+  name: 'Goku',
+  age: 50,
+  superpowers: ['Kamehameha', 'Genki Dama'],
+}
+
+console.log(goku)
+
+// 6 - intersection types
+interface Character {
+  name: string
+}
+
+interface Gun {
+  type: string
+  caliber: number
+}
+
+type HumanWithGun = Character & Gun
+
+const arnold: HumanWithGun = {
+  name: 'Arnold',
+  type: 'Shotgun',
+  caliber: 12,
+}
+
+console.log(arnold)
+
+// 7 - read only array
+
+let myArray: ReadonlyArray<string> = ['Maçã', 'Laranja', 'Pêra']
+
+// myArray[3] = 'Mamão'
+
+myArray.forEach((item) => {
+  console.log('Fruta: ' + item)
+})
+
+myArray = myArray.map((item) => {
+  return `Fruta: ${item}`
+})
+
+console.log(myArray)
+
+// 8 - tuplas
+type fiveNumbers = [number, number, number, number, number]
+
+const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5]
+// const myNumberArray2: fiveNumbers = [1,2,3,4,5,6]
+// const mixedArray: fiveNumbers = ["teste", 1]
+
+type nameAndAge = [string, number]
+
+const anotherUser = ['Matheus', 30]
+
+anotherUser[1] = 'João'
+
+console.log(anotherUser)
+
+// 9 - tuplas com readonly
+function showNumbers(numbers: readonly [number, number]) {
+  // numbers[0] = 10
+  console.log(numbers[0])
+  console.log(numbers[1])
+}
+
+showNumbers([1, 2])
+// showNumbers(['teste', 1])

@@ -1,35 +1,68 @@
 "use strict";
-// 1 - generics
-function showData(arg) {
-    return `O dado 'e: ${arg}`;
+function showProductDetails(product) {
+    console.log(`O nome do produto é ${product.name}, seu preço é R$${product.price}`);
+    if (product.isAvailable) {
+        console.log('Este produto está disponível!');
+    }
 }
-console.log(showData(5));
-console.log(showData('Teste'));
-console.log(showData(true));
-console.log("------------2--------------");
-// 2 - constraint em generic
-function showProductName(obj) {
-    return `O nome do produto e: ${obj.name}`;
-}
-const myObj = { name: "Porta", cor: "Branca" };
-const otherProd = { name: "carro", wheels: 4, engine: 1.0 };
-const thirdObj = { price: 20.9 }; //Precisa ter propriedade NAME , a outras nao importa
-console.log(showProductName(myObj));
-console.log(showProductName(otherProd));
-//console.log(showProductName(thirdObj));    Precisa ter propriedade NAME , a outras nao importa
-console.log("------------3--------------");
-const myCar = { name: "Fusca", wheels: 4, engine: 1.0, color: "Branco" };
-const myPen = { name: "Caneta", wheels: false, engine: false, color: "Azul" };
-console.log(myCar);
-console.log(myPen);
-console.log("------------4--------------");
-// 4 - Type parameters
-function getSomeKey(obj, key) {
-    return `A chave ${key} esta presente no objeto e tem o valor de ${obj[key]}`;
-}
-const server = {
-    hd: '2TB',
-    ram: '32GB'
+const shirt = {
+    name: 'Camisa',
+    price: 29.99,
+    isAvailable: true,
 };
-console.log(getSomeKey(server, 'ram'));
-//console.log(getSomeKey(server, 'teste'));
+showProductDetails(shirt);
+function showUserDetails(user) {
+    console.log(`E-mail do usuário: ${user.email}`);
+    if (user.role) {
+        console.log(`Sua função no sistema é de: ${user.role}`);
+    }
+}
+const u1 = { email: 'matheus@teste.com', role: 'Admin' };
+const u2 = { email: 'joao@teste.com' };
+showUserDetails(u1);
+showUserDetails(u2);
+const fusca = {
+    brand: 'Vw',
+    wheels: 4,
+};
+let coords = {
+    x: 10,
+};
+// coords.y = 'teste'
+coords.y = 15;
+console.log(coords);
+const arr1 = [1, 2, 3];
+const goku = {
+    name: 'Goku',
+    age: 50,
+    superpowers: ['Kamehameha', 'Genki Dama'],
+};
+console.log(goku);
+const arnold = {
+    name: 'Arnold',
+    type: 'Shotgun',
+    caliber: 12,
+};
+console.log(arnold);
+// 7 - read only array
+let myArray = ['Maçã', 'Laranja', 'Pêra'];
+// myArray[3] = 'Mamão'
+myArray.forEach((item) => {
+    console.log('Fruta: ' + item);
+});
+myArray = myArray.map((item) => {
+    return `Fruta: ${item}`;
+});
+console.log(myArray);
+const myNumberArray = [1, 2, 3, 4, 5];
+const anotherUser = ['Matheus', 30];
+anotherUser[1] = 'João';
+console.log(anotherUser);
+// 9 - tuplas com readonly
+function showNumbers(numbers) {
+    // numbers[0] = 10
+    console.log(numbers[0]);
+    console.log(numbers[1]);
+}
+showNumbers([1, 2]);
+// showNumbers(['teste', 1])
