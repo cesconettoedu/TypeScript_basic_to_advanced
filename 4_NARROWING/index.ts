@@ -17,7 +17,7 @@
 
 
 // 2 - checando se valor existe
-    function operations(arr: number[], operation: string | undefined) {
+    function operations(arr: number[], operation?: string | undefined) {
         if(operation) {
             
             if(operation === "sum") {
@@ -33,7 +33,7 @@
         }
     }
 
-    operations([1, 2, 3])               //Defina uma operacao.
+    operations([1, 2, 3])           //mandou sem operacao    //Defina uma operacao.
     operations([1, 2, 3], "sum")        //6
     operations([2, 4, 8], "multiply")   //64
 

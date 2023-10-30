@@ -36,3 +36,15 @@
             //  https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30001262#overview
 
 
+
+
+
+// Narrowing
+    // para checar que tipo de dado vem para nos, exemplo quando consome um API as vezes nao se sabe o que ela esta enviando
+
+
+
+
+PAREI A REVISAO AQUI
+
+https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30031324#overview
