@@ -23,6 +23,7 @@
       console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
     }
 
+        //cria um obj tipa ele com a interface ai tem q colocar as propriedades baseada na interface
     const coordObj:Point = {
         x: 10,
         y: 15,
@@ -30,3 +31,8 @@
     }
 
     showCoords(coordObj)
+
+//Na INTERFACE (mais usado) podemos add ou mudar as propriedades depois, no TYPE ALIAS nao
+            //  https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30001262#overview
+
+
