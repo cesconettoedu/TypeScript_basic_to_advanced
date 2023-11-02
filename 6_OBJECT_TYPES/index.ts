@@ -2,7 +2,7 @@
 interface Product {
   name: string
   price: number
-  isAvailable: true
+  isAvailable: boolean
 }
 
 function showProductDetails(product: Product) {
@@ -11,6 +11,8 @@ function showProductDetails(product: Product) {
   )
   if (product.isAvailable) {
     console.log('Este produto está disponível!')
+  } else {
+    console.log('Este produto NAO está disponível!')
   }
 }
 
@@ -21,6 +23,7 @@ const shirt: Product = {
 }
 
 showProductDetails(shirt)
+showProductDetails({name: 'tenis', price: 30, isAvailable: false})
 
 // 2 - propriedade opcional em interface
 interface User {

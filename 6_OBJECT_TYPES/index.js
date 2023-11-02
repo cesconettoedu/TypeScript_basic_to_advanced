@@ -4,6 +4,9 @@ function showProductDetails(product) {
     if (product.isAvailable) {
         console.log('Este produto está disponível!');
     }
+    else {
+        console.log('Este produto NAO está disponível!');
+    }
 }
 const shirt = {
     name: 'Camisa',
@@ -11,6 +14,7 @@ const shirt = {
     isAvailable: true,
 };
 showProductDetails(shirt);
+showProductDetails({ name: 'tenis', price: 30, isAvailable: false });
 function showUserDetails(user) {
     console.log(`E-mail do usuário: ${user.email}`);
     if (user.role) {
