@@ -47,4 +47,4 @@
 
 //PAREI A REVISAO AQUI
 
-https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30091510#overview
+https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30114836#overview
