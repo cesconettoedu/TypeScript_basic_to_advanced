@@ -35,12 +35,18 @@
 //Na INTERFACE (mais usado) podemos add ou mudar as propriedades depois, no TYPE ALIAS nao
             //  https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30001262#overview
 
-
-
-
-
 // Narrowing
     // para checar que tipo de dado vem para nos, exemplo quando consome um API as vezes nao se sabe o que ela esta enviando
+
+
+// criacao tipos, funcao aceita qualquer generico qualquer tipo e a saida dela 'e uma string ou outra coisa que eu colocar
+function showData<T>(arg: T): string {
+        return `O dado 'e: ${arg}`
+    }
+
+    console.log(showData(5));
+    console.log(showData('Teste')); 
+    console.log(showData(true));      //tudo vira string
 
 
 

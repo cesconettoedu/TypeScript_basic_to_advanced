@@ -6,6 +6,7 @@
     console.log(showData(5));
     console.log(showData('Teste'));
     console.log(showData(true));
+    console.log(showData(["true"]));
     
     
 
