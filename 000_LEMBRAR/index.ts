@@ -51,5 +51,5 @@ function showData<T>(arg: T): string {
 
 
 
-//PAREI A REVISAO AQUI
-https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30115014#overview
+//PAREI  AQUI
+https://www.udemy.com/course/typescript-do-basico-ao-avancado-c-react-express/learn/lecture/30121586#overview
