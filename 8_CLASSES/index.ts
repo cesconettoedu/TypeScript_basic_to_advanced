@@ -223,7 +223,7 @@ console.log("------------9--------------");
 // 9 - Implements
 
 interface showTitle {
-  itemTitle(): string
+  itemTitle(): string     // e um metodo que retorna uma string
 }
 
 class blogPost implements showTitle {
@@ -237,9 +237,49 @@ class blogPost implements showTitle {
   itemTitle() {
     return `O Titulo do post e: ${this.title}`
   }
-
 }
 
 const myPost = new blogPost("Hello World")
 
 console.log(myPost.itemTitle());
+
+             // se tivesse outra classe aproveitaria a interface
+class TestingInteface implements showTitle {
+
+  title
+
+  constructor(title: string) {
+    this.title = title
+  }
+
+  itemTitle() {
+    return `O Titulo e: ${this.title}`
+  }
+}
+     
+
+
+
+console.log("------------10--------------");
+// 10 - Override de metodos
+
+class Base {
+  someMethod() {
+    console.log("Alguma coisa");
+  }
+}
+
+class Nova extends Base {
+  someMethod() {
+    console.log("Testando outra coisa");  //vai substituir o metodo da class pai
+  }
+}
+
+const myObject = new Nova()
+myObject.someMethod()
+
+
+
+
+console.log("------------11--------------");
+// 11 - 
